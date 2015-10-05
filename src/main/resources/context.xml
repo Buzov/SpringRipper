@@ -2,8 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+    <context:component-scan/>
+    <context:annotation-config/>
+    -->
+    <!--регистрируем PostProcessor для выполнения прокси-->
+    <bean class="quoter.ProfilingHandlerBeanPostProcessor"/>
+    <!--регистрируем PostProcessor для выполнения метод помеченных @PostConstruct-->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <!--регистрируем наш PostProcessor для инжекции случайного числа-->
+    <bean class="quoter.InjectRandomIntAnnotationBeanPostProcessor"/>
+    
     <bean id="terminatorQuoter"
           class="quoter.TerminatorQuoter">
         <property name="message" value="I'll be back" />

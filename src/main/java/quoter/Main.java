@@ -14,8 +14,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author artur
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        context.getBean(TerminatorQuoter.class).sayQuote();
+        // context.getBean(TerminatorQuoter.class).sayQuote(); плохой тон смотреть по имени класса
+        while(true) {
+            Thread.sleep(100);
+            context.getBean(Quoter.class).sayQuote();
+        }
+        
     }
 }
