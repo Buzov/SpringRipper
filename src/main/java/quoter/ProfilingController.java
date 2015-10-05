@@ -10,7 +10,7 @@ package quoter;
  * @author artur
  */
 public class ProfilingController implements ProfilingControllerMBean {
-    private boolean enabled;
+    private boolean enabled = true;
 
     /**
      * @return the enabled

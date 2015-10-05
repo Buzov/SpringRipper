@@ -17,10 +17,12 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         // context.getBean(TerminatorQuoter.class).sayQuote(); плохой тон смотреть по имени класса
-        while(true) {
+        // для профилирования
+        /*while(true) {
             Thread.sleep(100);
             context.getBean(Quoter.class).sayQuote();
-        }
+        }*/
+        context.getBean(Quoter.class).sayQuote();        
         
     }
 }

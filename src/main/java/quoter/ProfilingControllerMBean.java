@@ -9,7 +9,7 @@ package quoter;
  *
  * @author artur
  */
-interface ProfilingControllerMBean {
+public interface ProfilingControllerMBean {
     
     void setEnabled(boolean enabled);
     

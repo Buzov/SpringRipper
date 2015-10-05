@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package quoter;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 /**
  *
  * @author artur
  */
-public interface Quoter {
+@Retention(RetentionPolicy.RUNTIME)
+public @interface PostProxy {
     
-    void sayQuote();
 }

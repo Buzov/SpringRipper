@@ -7,6 +7,8 @@
     <context:component-scan/>
     <context:annotation-config/>
     -->
+    <!--Регистрируем -->
+    <bean class="quoter.PostProxyInvokerContextListener"/>
     <!--регистрируем PostProcessor для выполнения прокси-->
     <bean class="quoter.ProfilingHandlerBeanPostProcessor"/>
     <!--регистрируем PostProcessor для выполнения метод помеченных @PostConstruct-->
