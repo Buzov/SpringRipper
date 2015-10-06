@@ -14,13 +14,13 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
- *
+ * ProfilingHandler для оборачивания в Proxy
  * @author artur
  */
 public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
 
-    private Map<String, Class> map = new HashMap<>();
-    private ProfilingController controller = new ProfilingController();
+    private final Map<String, Class> map = new HashMap<>();
+    private final ProfilingController controller = new ProfilingController();
     
     public ProfilingHandlerBeanPostProcessor() throws Exception {
         MBeanServer platformMBeanServer = ManagementFactory.getPlatformMBeanServer();

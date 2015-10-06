@@ -12,17 +12,19 @@
     <context:component-scan/>
     <context:annotation-config/>
     -->
+    <!--Регистрируем для выполнения третьей фазы инициализации-->
     <bean class="quoter.PostProxyInvokerContextListener"/>
-    <!--Регистрируем -->
     <!--регистрируем PostProcessor для выполнения прокси-->
     <bean class="quoter.ProfilingHandlerBeanPostProcessor"/>
     <!--регистрируем PostProcessor для выполнения метод помеченных @PostConstruct-->
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
     <!--регистрируем наш PostProcessor для инжекции случайного числа-->
     <bean class="quoter.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <!--Для подмены устаревших классов-->
+    <bean class="quoter.DeprecationHandlerBeanFactoryPostProcessor"/>
     
     <bean id="terminatorQuoter"
-          class="quoter.quoter.TerminatorQuoter">
+          class="quoter.terminator.TerminatorQuoter">
         <property name="message" value="I'll be back" />
     </bean>
 </beans>

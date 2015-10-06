@@ -1,4 +1,4 @@
-package quoter.quoter;
+package quoter.terminator;
 
 
 /**

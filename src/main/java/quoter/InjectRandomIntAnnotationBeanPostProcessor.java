@@ -8,7 +8,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.util.ReflectionUtils;
 
 /**
- *
+ * PostProcessor дял внедрение рандомных чисел в поля, помеченные @InjectRandomInt
  * @author artur
  */
 public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProcessor {

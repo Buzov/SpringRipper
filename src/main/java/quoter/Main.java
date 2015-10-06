@@ -1,6 +1,6 @@
 package quoter;
 
-import quoter.quoter.Quoter;
+import quoter.terminator.Quoter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 

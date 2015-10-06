@@ -1,9 +1,10 @@
-package quoter.quoter;
+package quoter.terminator;
 
 import quoter.annotation.PostProxy;
 import quoter.annotation.InjectRandomInt;
 import quoter.annotation.Profiling;
 import javax.annotation.PostConstruct;
+import quoter.annotation.DeprecatedClass;
 
 
 /**
@@ -11,6 +12,7 @@ import javax.annotation.PostConstruct;
  * @author artur
  */
 @Profiling
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter{
 
     @InjectRandomInt(min = 2, max = 7)
@@ -49,5 +51,14 @@ public class TerminatorQuoter implements Quoter{
     public void say() {
         System.out.println("Phase 3");
     }
+
+    /**
+     * @param repeat the repeat to set
+     */
+    public void setRepeat(int repeat) {
+        this.repeat = repeat;
+    }
+    
+    
     
 }

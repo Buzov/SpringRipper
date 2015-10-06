@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 /**
- *
+ * Invoker для третьей фазы инициализации бина
  * @author artur
  */
 public class PostProxyInvokerContextListener implements ApplicationListener<ContextRefreshedEvent> {
