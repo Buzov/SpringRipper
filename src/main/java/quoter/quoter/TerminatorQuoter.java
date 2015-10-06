@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package quoter;
+package quoter.quoter;
 
+import quoter.annotation.PostProxy;
+import quoter.annotation.InjectRandomInt;
+import quoter.annotation.Profiling;
 import javax.annotation.PostConstruct;
 
 
@@ -32,9 +30,8 @@ public class TerminatorQuoter implements Quoter{
     }
     
     @Override
-    @PostProxy
     public void sayQuote() {
-        System.out.println("Phase 3");
+        
         for (int i = 0; i < repeat; i++) {
             System.out.println(message);
         }
@@ -45,6 +42,12 @@ public class TerminatorQuoter implements Quoter{
      */
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    @PostProxy
+    public void say() {
+        System.out.println("Phase 3");
     }
     
 }

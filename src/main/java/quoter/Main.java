@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package quoter;
 
+import quoter.quoter.Quoter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -18,10 +14,10 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         // context.getBean(TerminatorQuoter.class).sayQuote(); плохой тон смотреть по имени класса
         // для профилирования
-        /*while(true) {
-            Thread.sleep(100);
-            context.getBean(Quoter.class).sayQuote();
-        }*/
+//        while(true) {
+//            Thread.sleep(100);
+//            context.getBean(Quoter.class).sayQuote();
+//        }
         context.getBean(Quoter.class).sayQuote();        
         
     }

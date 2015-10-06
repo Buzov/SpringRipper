@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package quoter;
 
+import quoter.annotation.PostProxy;
 import java.lang.reflect.Method;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -29,9 +22,9 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
         String[] names = context.getBeanDefinitionNames();
         for (String name : names) {
             BeanDefinition beanDefinition = factory.getBeanDefinition(name);
-            String beanClassName = beanDefinition.getBeanClassName();
+            String originalClassName = beanDefinition.getBeanClassName();
             try {
-                Class<?> originalClass = Class.forName(beanClassName);
+                Class<?> originalClass = Class.forName(originalClassName);
                 Method[] methods = originalClass.getMethods();
                 for (Method method : methods) {
                     if(method.isAnnotationPresent(PostProxy.class)) {
